@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>politico software </title>
+<link rel="stylesheet" type="text/css" href="poli.css">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="main">
+
+<div class="content">
+   
+
+<!-- menu -->
+  <div class="menu">
+  <i><h4>welcome:kanamugire aristide</h4></i>
+  
+  
+
+  </div>
+  <!--end of menu  -->
+<section>
+  
+  
+  <div class="sidenav">
+    
+<div class="circle1">
+<h2>User Profile</h2>
+<h6>Name:kanamugire aristide</h6>
+<img src="images/arist.jpg"  class="circle">
+
+</div><br>
+  <i><a href="view_candidates.html">view candidates</a></i><br>
+    <i><a href="u_election_results.html">view elections results</a></i><br>
+    <i><a href="u_view_politicaloffice.html">view political office</a></i><br>
+    <i><a href="u_add_potition.html">Add potition</a></i><br>
+    <i><a href="#clients">Reset password</a></i><br>
+    <i><a href="#contact">Contact</a></i>
+</div>
+
+<div class="main2">
+  <i align="center"><h2>USER PANEL</h2></i>
+  <h2>view political office</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Political party.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:10%;">N</th>
+    <th style="width:40%;">Office name</th>
+    <th style="width:30%;">office type</th>
+    
+   
+    
+  </tr>
+  <tr>
+    <td><h4>1</h4></td>
+    <td><h4>education</h4></td>
+    <td>federal</td>
+    
+    
+  </tr>
+  <tr>
+    <td><h4>1</h4></td>
+    <td><h4>sport</h4></td>
+    <td>legislativ</td>
+    
+  </tr>
+  
+</table>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</div>
+</div>
+</div>
+<br>
+
+</section>
+
+<footer>
+  <p>Design by izere roger sabin</p>
+</footer>
+
+</body>
+</html>
