@@ -1,0 +1,4 @@
+language: node.js
+node js:
+:'?'
+after_success: npm run coverage
