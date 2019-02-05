@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>politico software system</title>
+<link rel="stylesheet" type="text/css" href="poli.css">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<header>
+  
+  <h2>POLITICO SOFTWARE SYSTEM</h2>
+  
+</header>
+<div class="content">
+   
+
+<!-- menu -->
+  <div class="menu">
+  <a class="active" href="politico.html">Home</a>
+  <a href="#news">News</a>
+  <a href="view_elections.html">Election results</a>
+  <a href="contact.html">Contact</a>
+   <a href="about.html">About</a>
+  <div class="menu-right">
+    <i><input type="text"name="user_query" placeholder="search here ...."/></i>
+    <i><input class="button" type="submit"name="search" value="search"/></i>
+    <i><div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">login</button>
+  <div id="myDropdown" class="dropdown-content">
+    <i><a href="login.html">Login as Admin</a></i>
+    <i><a href="Politician_login.html">Login as politician</a></i>
+    <i><a href="user_login.html">Login as user</a></i>
+  </div>
+</div></i>
+
+
+    <i><input type="button" value="Sign up" class="button" onclick="window.location.href='signup.html'"/>
+  </div>
+</div>
+
+  </div>
+  <!--end of menu  -->
+  <body>
+
+<div style="text-align:center">
+</div>
+<!-- Clarity Section -->
+<div class="container" style="background-color:#f1f1f1">
+  <div class="row">
+    <div class="column-33">
+      <img src="images/politico4.jpg" alt="App" width="335" height="471">
+    </div>
+    <div class="column-66">
+      <h1 class="xlarge-font"><b>Democracy</b></h1>
+      <h1 class="large-font" style="color:red;"><b>I vote who?</b></h1>
+      <p><span style="font-size:24px">A revolution in resolution.</span> The general elections are around the corner, hence it’s a political season. Get into the mood of  the season.Politico enables citizens give their mandate to politicians running for different government offices  while building trust in the process through transparency. 
+</p>
+      <button class="button4" style="background-color:red">Read More</button>
+    </div>
+  </div>
+</div>
+
+<!-- The App Section -->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="xlarge-font"><b>Politico App</b></h1>
+      <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why use it?</b></h1>
+
+      <p><span style="font-size:36px">Follow Election in all aspects.</span> The general elections are around the corner, hence it’s a political season. Get into the mood of  the season.Politico enables citizens give their mandate to politicians running for different government offices  while building trust in the process through transparency. 
+</p>
+      <button class="button4">use Application</button>
+    </div>
+    <div class="column-33">
+        <img src="images/politico3.jpg" width="335" height="471" >
+    </div>
+  </div>
+</div>
+
+</body>
+
+</section>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<footer>
+  <p>Design by izere roger sabin</p>
+</footer>
+
+</body>
+</html>
