@@ -3,7 +3,7 @@ import parties from "../db/parties";
 import office from "../db/office";
 import candidates from "../db/candidates";
 import votes from "../db/votes";
-import petition from "../db/petition";
+import petition from "../db/Petition";
 import moment from "moment";
 
 class postsController {

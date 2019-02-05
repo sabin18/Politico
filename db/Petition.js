@@ -1,4 +1,4 @@
-const potition = [
+const petition = [
     {
         id:1,
         createdon:1,
@@ -15,4 +15,4 @@ const potition = [
     },
     ];
     
-    export default potition;
+    export default petition;
