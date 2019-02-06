@@ -1,9 +1,9 @@
-import user from "../db/user";
+import users from "../db/user";
 import parties from "../db/parties";
-import office from "../db/office";
+import offices from "../db/office";
 import candidates from "../db/candidates";
 import votes from "../db/votes";
-import petition from "../db/Petition";
+import petitions from "../db/Petition";
 import moment from "moment";
 
 class postsController {
@@ -16,16 +16,16 @@ class postsController {
     static getuser(req, res) {
         return res.json({
           status:200,  
-          message: "List of all user",
-          posts: user
+          message: "List of all users",
+          posts: users
         });
     }
 
         static getoffice(req, res) {
             return res.json({
               status:200,  
-              message: "List of all office",
-              posts: office
+              message: "List of all offices",
+              posts: offices
             });
   }
 
@@ -49,7 +49,7 @@ class postsController {
             return res.json({
               status:200,  
               message: "List of all petitions",
-              posts: petition
+              posts: petitions
             });
 } 
 
@@ -57,14 +57,14 @@ class postsController {
 static createparties(req, res) {
     const id = parseInt(parties.length) + 1;
     const {name,HQAddress,logourl} = req.body;
-    const newPost = {
+    const newparty = {
       id,
       name,
       HQAddress,
       logourl,
       created_at: moment.utc().format()
     };
-    parties.push(newPost);
+    parties.push(newparty);
     return res.status(200).json({  
       message: "created a new party"
     });
@@ -72,9 +72,9 @@ static createparties(req, res) {
   }
 
   static createuser(req, res) {
-    const id = parseInt(user.length) + 1;
+    const id = parseInt(users.length) + 1;
     const {firstname,lastname,othername,email,phonenumber,passporturl} = req.body;
-    const newPost = {
+    const newuser = {
       id,
       firstname,
       lastname,
@@ -85,7 +85,7 @@ static createparties(req, res) {
       isadmin:'false',
       
     };
-    user.push(newPost);
+    users.push(newuser);
     return res.status(200).json({  
       message: "created a new user"
     });
@@ -93,47 +93,33 @@ static createparties(req, res) {
 
   static createcandidates(req, res) {
     const id = parseInt(candidates.length) + 1;
-    office.id=1
-    parties.id=2
-    user.id=3
 
-    const idoff=office.id;
-    const idparty= parties.id;
-    const idcnd=user.id;
-
-    const newPost = {
+    const newcandidate = {
       id,
-      office:idoff,
-      party:idparty,
-      candidate:idcnd,
-
-      
+      office:1,
+      party:2,
+      candidate:3,
       
     };
-    candidates.push(newPost);
+    candidates.push(newcandidate);
     return res.status(200).json({  
-      message: "created a new candidates"
+      message: "created a new candidate"
     });
   }
 
 
   static createpetition(req, res) {
-    const id = parseInt(parties.length) + 1;
-    office.id=1
-    user.id=3
-
-    const idoff=office.id;
-    const idcnd=user.id;
+    const id = parseInt(petitions.length) + 1;
 
     const {body} = req.body;
-    const newPost = {
+    const newpetition = {
       id,
       createdon:moment.utc().format(),
-      createdby:idcnd,
-      office:idoff,
+      createdby:1,
+      office:3,
       body,
     };
-    petition.push(newPost);
+    petitions.push(newpetition);
     return res.status(200).json({  
       message: "created a new petition"
     });
@@ -142,16 +128,16 @@ static createparties(req, res) {
   
 
   static createoffice(req, res) {
-    const id = parseInt(parties.length) + 1;
+    const id = parseInt(offices.length) + 1;
     const {type,name}= req.body;
-    const newPost = {
+    const newoffice = {
       created_at: moment.utc().format(),
       id,
       type,
       name,
      
     };
-    office.push(newPost);
+    offices.push(newoffice);
     return res.status(200).json({  
       message: "created a new office"
     });
@@ -163,11 +149,11 @@ static createparties(req, res) {
 //get user by id
 static getOneuser(req, res) {
   const { id } = req.params;
-  const post = user.find(oneuser => oneuser.id == id);
-  if (post) {
+  const user = users.find(oneuser => oneuser.id == id);
+  if (user) {
     return res.status(200).json({
       message: "one user found",
-      onePost: post
+      onePost: user
     });
   } else {
     res.status(400).json({
@@ -179,11 +165,11 @@ static getOneuser(req, res) {
 //get parties by id
 static getOneparty(req, res) {
   const { id } = req.params;
-  const post = parties.find(oneparties => oneparties.id == id);
-  if (post) {
+  const party = parties.find(oneparties => oneparties.id == id);
+  if (party) {
     return res.status(200).json({
       message: "one party found",
-      onePost: post
+      onePost: party
     });
   } else {
     res.status(400).json({
@@ -194,11 +180,11 @@ static getOneparty(req, res) {
 // get office by id
 static getOneoffice(req, res) {
   const { id } = req.params;
-  const post = office.find(oneoffice => oneoffice.id == id);
-  if (post) {
+  const office = offices.find(oneoffice => oneoffice.id == id);
+  if (office) {
     return res.status(200).json({
       message: "one office found",
-      onePost: post
+      onePost: office
     });
   } else {
     res.status(400).json({
@@ -209,15 +195,15 @@ static getOneoffice(req, res) {
 //get candidate by id
 static getOnecandidate(req, res) {
   const { id } = req.params;
-  const post = candidates.find(onecandidates => onecandidates.id == id);
-  if (post) {
+  const candidate = candidates.find(onecandidates => onecandidates.id == id);
+  if (candidate) {
     return res.status(200).json({
-      message: "one candidates found",
-      onePost: post
+      message: "one candidate found",
+      onePost: candidate
     });
   } else {
     res.status(400).json({
-      error: "no candidates found with that id"
+      error: "no candidate found with that id"
     });
   }
 }
@@ -225,11 +211,11 @@ static getOnecandidate(req, res) {
 //get votes by id
 static getOnevote(req, res) {
   const { id } = req.params;
-  const post = votes.find(onevotes => onevotes.id == id);
-  if (post) {
+  const vote = votes.find(onevotes => onevotes.id == id);
+  if (vote) {
     return res.status(200).json({
       message: "one vote found",
-      onePost: post
+      onePost: vote
     });
   } else {
     res.status(400).json({
@@ -241,11 +227,11 @@ static getOnevote(req, res) {
 //get petition by id
 static getOnepetition(req, res) {
   const { id } = req.params;
-  const post = petition.find(onepetition => onepetition.id == id);
-  if (post) {
+  const petition = petitions.find(onepetition => onepetition.id == id);
+  if (petition) {
     return res.status(200).json({
       message: "one petition found",
-      onePost: post
+      onePost: petition
     });
   } else {
     res.status(400).json({
@@ -258,44 +244,44 @@ static getOnepetition(req, res) {
 
 static updateoffice(req, res) {
   const { id } = req.params;
-  const post = office.find(updatePost => updatePost.id == id);
-  if (post) {
-    (post.name = req.body.name), (post.type=req.body.type),(post.body = req.body.body);
+  const office = offices.find(updatePost => updatePost.id == id);
+  if (office) {
+    (office.name = req.body.name), (office.type=req.body.type),(office.body = req.body.body);
     return res.status(201).json({
       message: "successfully updated",
-      updatePost: post
+      updatePost: office
     });
   } else {
     res.status(400).json({
-      error: "post cannot be updated"
+      error: "office cannot be updated"
     });
   }
 }
 
 static updateparty(req, res) {
   const { id } = req.params;
-  const post = parties.find(updatePost => updatePost.id == id);
-  if (post) {
-    (post.name = req.body.name), (post.HQAddress=req.body.HQAddress), (post.logourl=req.body.logourl), (post.body = req.body.body);
+  const party = parties.find(updatePost => updatePost.id == id);
+  if (party) {
+    (party.name = req.body.name), (party.HQAddress=req.body.HQAddress), (party.logourl=req.body.logourl), (party.body = req.body.body);
     return res.status(201).json({
       message: "successfully updated",
-      updatePost: post
+      updatePost: party
     });
   } else {
     res.status(400).json({
-      error: "post cannot be updated"
+      error: "party cannot be updated"
     });
   }
 }
 
 static updateuser(req, res) {
   const { id } = req.params;
-  const post = user.find(updatePost => updatePost.id == id);
-  if (post) {
-        (post.firstname = req.body.firstname), (post.lastname=req.body.lastname), (post.othername=req.body.othername),(post.email=req.body.email),(post.phonenumber=req.body.phonenumber),(post.passporturl=req.body.passporturl),(post.body = req.body.body);
+  const user = users.find(updatePost => updatePost.id == id);
+  if (user) {
+        (user.firstname = req.body.firstname), (user.lastname=req.body.lastname), (user.othername=req.body.othername),(user.email=req.body.email),(user.phonenumber=req.body.phonenumber),(user.passporturl=req.body.passporturl),(user.body = req.body.body);
     return res.status(201).json({
       message: "user successfully updated",
-      updatePost: post
+      updatePost: user
     });
   } else {
     res.status(400).json({
@@ -308,17 +294,17 @@ static updateuser(req, res) {
 
   static deleteparties(req, res) {
     let { id } = req.params;
-    const findPost = parties.find(post => {
+    const findparty = parties.find(post => {
       return post.id == id;
     });
-    if (findPost) {
-      parties.pop(findPost);
-      const newparties = parties.filter(post => {
-        return post !== findPost;
+    if (findparty) {
+      parties.pop(findparty);
+      const newparty = parties.filter(post => {
+        return post !== findparty;
       });
       res.status(200).json({
         message: "party successfully deleted",
-        Posts: newparties
+        Posts: newparty
       });
     } else {
       res.status(400).json({
@@ -329,17 +315,17 @@ static updateuser(req, res) {
 
   static deleteuser(req, res) {
     let { id } = req.params;
-    const findPost = user.find(post => {
+    const finduser = users.find(post => {
       return post.id == id;
     });
-    if (findPost) {
-      user.pop(findPost);
-      const newparties = user.filter(post => {
-        return post !== findPost;
+    if (finduser) {
+      users.pop(finduser);
+      const newuser = users.filter(post => {
+        return post !== finduser;
       });
       res.status(200).json({
         message: "user successfully deleted",
-        Posts: newparties
+        Posts: newuser
       });
     } else {
       res.status(400).json({
@@ -349,17 +335,17 @@ static updateuser(req, res) {
   }
   static deletecandidate(req, res) {
     let { id } = req.params;
-    const findPost = candidates.find(post => {
+    const findcandidate = candidates.find(post => {
       return post.id == id;
     });
-    if (findPost) {
-      candidates.pop(findPost);
-      const newparties = candidates.filter(post => {
-        return post !== findPost;
+    if (findcandidate) {
+      candidates.pop(findcandidate);
+      const newcandidate = candidates.filter(post => {
+        return post !== findcandidate;
       });
       res.status(200).json({
         message: "candidate successfully deleted",
-        Posts: newparties
+        Posts: newcandidate
       });
     } else {
       res.status(400).json({
@@ -370,17 +356,17 @@ static updateuser(req, res) {
 
   static deleteoffice(req, res) {
     let { id } = req.params;
-    const findPost = office.find(post => {
+    const findoffice = offices.find(post => {
       return post.id == id;
     });
-    if (findPost) {
-      office.pop(findPost);
-      const newparties = office.filter(post => {
-        return post !== findPost;
+    if (findoffice) {
+      offices.pop(findoffice);
+      const newoffice = offices.filter(post => {
+        return post !== findoffice;
       });
       res.status(200).json({
         message: "office successfully deleted",
-        Posts: newparties
+        Posts: newoffice
       });
     } else {
       res.status(400).json({
@@ -393,17 +379,17 @@ static updateuser(req, res) {
 
 static deletepetition(req, res) {
   let { id } = req.params;
-  const findPost = petition.find(post => {
+  const findpetition = petitions.find(post => {
     return post.id == id;
   });
-  if (findPost) {
-    petition.pop(findPost);
-    const newparties = petition.filter(post => {
-      return post !== findPost;
+  if (findpetition) {
+    petitions.pop(findpetition);
+    const newpetition = petitions.filter(post => {
+      return post !== findpetition;
     });
     res.status(200).json({
       message: "petition successfully deleted",
-      Posts: newparties
+      Posts: newpetition
     });
   } else {
     res.status(400).json({

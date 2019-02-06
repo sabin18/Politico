@@ -31,14 +31,16 @@
 <img src="images/arton.jpg"class="circle">
 
 </div><br>
+
 <i><a href="politician_panel.html">politician home</a></i><br>
   <i><a href="candidates.html">view candidates</a></i><br>
     <i><a href="p_election_results.html">view elections results</a></i><br>
     <i><a href="p_view_politicaloffice.html">view political office</a></i><br>
     <i><a href="potition.html">create a ​petition</a></i><br>
     <i><a href="Express.html">Express interest</a></i><br>
-    <i><a href="#clients">Reset password</a></i><br>
+    <i><a href="p_resetpassword.html">Reset password</a></i><br>
     <i><a href="#contact">Contact</a></i>
+     <i><a href="politico.html">Logout</a></i><br>
 </div>
 
 <div class="main2">
@@ -55,8 +57,6 @@
     <th style="width:20%;">votes</th>
     <th style="width:20%;">party</th>
     <th style="width:40%;">Logo</th>
-    <th style="width:40%;">Edit</th>
-    <th style="width:40%;">Delete</th>
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -65,8 +65,7 @@
     <td>727</td>
     <td><h4>Rwandan Patriotic Front</h4></td>
     <td><img src="party logo/fpr.png" width="80" height="80" border="1"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -75,8 +74,7 @@
     <td>727</td>
     <td>Centrist Democratic Party</td>
     <td><img src="party logo/centrist.jpg" width="80" height="80" border="1"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>3</h4></td>
@@ -85,8 +83,7 @@
     <td>727</td>
     <td></h4>Ideal Democratic Party</h4></td>
     <td><img src="party logo/ideal.png" width="100" height="100"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -95,8 +92,7 @@
     <td>727</td>
     <td>Rwandan Socialist Party</td>
     <td><img src="party logo/social democrat.png" width="50" height="50"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -105,8 +101,7 @@
     <td>727</td>
     <td>Democratic Union of the Rwandan People</td>
     <td><img src="party logo/democratic union.jpg" width="50" height="50"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -115,8 +110,7 @@
     <td>727</td>
     <td>Social Democratic Party</td>
     <td><img src="party logo/social party.png" width="50" height="50"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -125,8 +119,7 @@
     <td>727</td>
     <td>Liberal Party</td>
     <td><img src="party logo/pl party.png" width="50" height="50"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -135,8 +128,6 @@
     <td>727</td>
     <td>Party for Progress and Concord</td>
     <td><img src="party logo/ppc.png" width="50" height="50"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -145,8 +136,7 @@
     <td>727</td>
     <td>Democratic Green Party of Rwanda</td>
     <td><img src="party logo/green party.jpg" width="50" height="50"></td>
-    <td><button class="button1">Edit</button></td>
-    <td><button class="button2">Delete</button></td>
+    
   </tr>
   <tr>
     <td><h4>1</h4></td>
@@ -155,8 +145,7 @@
     <td>727</td>
     <td>Social Party Imberakuri</td>
     <td><img src="party logo/imberakuri.png" width="50" height="50"></td>
-   <td><button class="button1">Edit</button></td>
-   <td><button class="button2">Delete</button></td>
+  
   </tr>
 </table>
 
@@ -168,8 +157,8 @@ function myFunction() {
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    td = tr[i].getElementsByTagName("td")[0];
+    td = tr[i].getElementsByTagName("td")[1];
+    td = tr[i].getElementsByTagName("td")[1];
     if (td) {
       txtValue = td.textContent || td.innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {

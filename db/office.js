@@ -1,4 +1,4 @@
-const office = [
+const offices = [
 
     { 
       id:1,
@@ -23,4 +23,4 @@ const office = [
     
 ];
 
-export default office;
+export default offices;

@@ -102,7 +102,7 @@ describe('user routes test', () => {
     });
 
     it('it should be able to Create a user', (done)=>{
-        const user={
+        const users={
             id:1,
             firstname:"kwizera",
             lastname:"kivin", 
@@ -114,7 +114,7 @@ describe('user routes test', () => {
         };
         chai.request(app)
             .post('/api/v1/user')
-            .send(user)
+            .send(users)
             .end((err, res)=>{
                 res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
@@ -123,7 +123,7 @@ describe('user routes test', () => {
     });
 
     it('it should be able to Update a user', (done)=>{
-        const user={
+        const users={
             id:1,
             firstname:"kwizera" ,
             lastname:"kivin", 
@@ -135,7 +135,7 @@ describe('user routes test', () => {
         };
         chai.request(app)
             .put('/api/v1/user/1')
-            .send(user)
+            .send(users)
             .end((err, res)=>{
                 res.should.have.property('status').eql(201);
                 res.body.should.be.a('object');
@@ -181,14 +181,14 @@ describe('office routes test', () => {
     });
 
     it('it should be able to Create an office', (done)=>{
-        const office={
+        const offices={
             id:1,
             type:"fedelal",
             name:"police",
         };
         chai.request(app)
             .post('/api/v1/office')
-            .send(office)
+            .send(offices)
             .end((err, res)=>{
                 res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
@@ -197,14 +197,14 @@ describe('office routes test', () => {
     });
 
     it('it should be able to Update an office', (done)=>{
-        const office={
+        const offices={
             id:1,
             type:"fedelal" ,
             name:"police",
         };
         chai.request(app)
             .put('/api/v1/parties/1')
-            .send(office)
+            .send(offices)
             .end((err, res)=>{
                 res.should.have.property('status').eql(201);
                 res.body.should.be.a('object');
@@ -307,7 +307,7 @@ describe('petition routes test', () => {
     });
 
     it('it should be able to Create a petiton', (done)=>{
-        const petition={
+        const petitions={
             id:1,
         createdon:1,
         createdby:1,
@@ -317,7 +317,7 @@ describe('petition routes test', () => {
         };
         chai.request(app)
             .post('/api/v1/petition')
-            .send(petition)
+            .send(petitions)
             .end((err, res)=>{
                 res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');

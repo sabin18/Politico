@@ -25,7 +25,16 @@ input[type=text4], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
+input[type=file] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -37,6 +46,12 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #45a049;
+}
+
+.main2 {
+  margin-left: 55px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }
 
 .container3 {
@@ -199,7 +214,7 @@ img {
   padding: 1px 3px;
   text-decoration: none;
   display: block;
-  font-size:20px;
+  font-size:25px;
   border: 1px solid #ccc; 
   font-family:initial;
   box-sizing:2px 2px; 

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80.26% </span>
+        <span class="strong">83.1% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>122/152</span>
+        <span class='fraction'>118/142</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">46.43% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>18/19</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">79.72% </span>
+        <span class="strong">82.71% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>114/143</span>
+        <span class='fraction'>110/133</span>
       </div>
     </div>
     <p class="quiet">
@@ -453,21 +453,7 @@
 <a name='L405'></a><a href='#L405'>405</a>
 <a name='L406'></a><a href='#L406'>406</a>
 <a name='L407'></a><a href='#L407'>407</a>
-<a name='L408'></a><a href='#L408'>408</a>
-<a name='L409'></a><a href='#L409'>409</a>
-<a name='L410'></a><a href='#L410'>410</a>
-<a name='L411'></a><a href='#L411'>411</a>
-<a name='L412'></a><a href='#L412'>412</a>
-<a name='L413'></a><a href='#L413'>413</a>
-<a name='L414'></a><a href='#L414'>414</a>
-<a name='L415'></a><a href='#L415'>415</a>
-<a name='L416'></a><a href='#L416'>416</a>
-<a name='L417'></a><a href='#L417'>417</a>
-<a name='L418'></a><a href='#L418'>418</a>
-<a name='L419'></a><a href='#L419'>419</a>
-<a name='L420'></a><a href='#L420'>420</a>
-<a name='L421'></a><a href='#L421'>421</a>
-<a name='L422'></a><a href='#L422'>422</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L408'></a><a href='#L408'>408</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -562,17 +548,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -587,11 +564,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -888,12 +860,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import user from "../db/user";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import users from "../db/user";
 import parties from "../db/parties";
-import office from "../db/office";
+import offices from "../db/office";
 import candidates from "../db/candidates";
 import votes from "../db/votes";
-import petition from "../db/Petition";
+import petitions from "../db/Petition";
 import moment from "moment";
 &nbsp;
 class postsController {
@@ -906,16 +878,16 @@ class postsController {
     static getuser(req, res) {
         return res.json({
           status:200,  
-          message: "List of all user",
-          posts: user
+          message: "List of all users",
+          posts: users
         });
     }
 &nbsp;
         static getoffice(req, res) {
             return res.json({
               status:200,  
-              message: "List of all office",
-              posts: office
+              message: "List of all offices",
+              posts: offices
             });
   }
 &nbsp;
@@ -939,7 +911,7 @@ class postsController {
             return res.json({
               status:200,  
               message: "List of all petitions",
-              posts: petition
+              posts: petitions
             });
 } 
 &nbsp;
@@ -947,14 +919,14 @@ class postsController {
 static createparties(req, res) {
     const id = parseInt(parties.length) + 1;
     const {name,HQAddress,logourl} = req.body;
-    const newPost = {
+    const newparty = {
       id,
       name,
       HQAddress,
       logourl,
       created_at: moment.utc().format()
     };
-    parties.push(newPost);
+    parties.push(newparty);
     return res.status(200).json({  
       message: "created a new party"
     });
@@ -962,9 +934,9 @@ static createparties(req, res) {
   }
 &nbsp;
   static createuser(req, res) {
-    const id = parseInt(user.length) + 1;
+    const id = parseInt(users.length) + 1;
     const {firstname,lastname,othername,email,phonenumber,passporturl} = req.body;
-    const newPost = {
+    const newuser = {
       id,
       firstname,
       lastname,
@@ -975,7 +947,7 @@ static createparties(req, res) {
       isadmin:'false',
       
     };
-    user.push(newPost);
+    users.push(newuser);
     return res.status(200).json({  
       message: "created a new user"
     });
@@ -983,47 +955,33 @@ static createparties(req, res) {
 &nbsp;
   static createcandidates(req, res) {
     const id = <span class="cstat-no" title="statement not covered" >parseInt(candidates.length) + 1;</span>
-<span class="cstat-no" title="statement not covered" >    office.id=1</span>
-<span class="cstat-no" title="statement not covered" >    parties.id=2</span>
-<span class="cstat-no" title="statement not covered" >    user.id=3</span>
 &nbsp;
-    const idoff=<span class="cstat-no" title="statement not covered" >office.id;</span>
-    const idparty= <span class="cstat-no" title="statement not covered" >parties.id;</span>
-    const idcnd=<span class="cstat-no" title="statement not covered" >user.id;</span>
-&nbsp;
-    const newPost = <span class="cstat-no" title="statement not covered" >{</span>
+    const newcandidate = <span class="cstat-no" title="statement not covered" >{</span>
       id,
-      office:idoff,
-      party:idparty,
-      candidate:idcnd,
-&nbsp;
-      
+      office:1,
+      party:2,
+      candidate:3,
       
     };
-<span class="cstat-no" title="statement not covered" >    candidates.push(newPost);</span>
+<span class="cstat-no" title="statement not covered" >    candidates.push(newcandidate);</span>
 <span class="cstat-no" title="statement not covered" >    return res.status(200).json({  </span>
-      message: "created a new candidates"
+      message: "created a new candidate"
     });
   }
 &nbsp;
 &nbsp;
   static createpetition(req, res) {
-    const id = parseInt(parties.length) + 1;
-    office.id=1
-    user.id=3
-&nbsp;
-    const idoff=office.id;
-    const idcnd=user.id;
+    const id = parseInt(petitions.length) + 1;
 &nbsp;
     const {body} = req.body;
-    const newPost = {
+    const newpetition = {
       id,
       createdon:moment.utc().format(),
-      createdby:idcnd,
-      office:idoff,
+      createdby:1,
+      office:3,
       body,
     };
-    petition.push(newPost);
+    petitions.push(newpetition);
     return res.status(200).json({  
       message: "created a new petition"
     });
@@ -1032,16 +990,16 @@ static createparties(req, res) {
   
 &nbsp;
   static createoffice(req, res) {
-    const id = parseInt(parties.length) + 1;
+    const id = parseInt(offices.length) + 1;
     const {type,name}= req.body;
-    const newPost = {
+    const newoffice = {
       created_at: moment.utc().format(),
       id,
       type,
       name,
      
     };
-    office.push(newPost);
+    offices.push(newoffice);
     return res.status(200).json({  
       message: "created a new office"
     });
@@ -1053,11 +1011,11 @@ static createparties(req, res) {
 //get user by id
 static getOneuser(req, res) {
   const { id } = req.params;
-  const post = user.find(oneuser =&gt; oneuser.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
+  const user = users.find(oneuser =&gt; oneuser.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (user) {
     return res.status(200).json({
       message: "one user found",
-      onePost: post
+      onePost: user
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1069,11 +1027,11 @@ static getOneuser(req, res) {
 //get parties by id
 static getOneparty(req, res) {
   const { id } = req.params;
-  const post = parties.find(oneparties =&gt; oneparties.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
+  const party = parties.find(oneparties =&gt; oneparties.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (party) {
     return res.status(200).json({
       message: "one party found",
-      onePost: post
+      onePost: party
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1084,11 +1042,11 @@ static getOneparty(req, res) {
 // get office by id
 static getOneoffice(req, res) {
   const { id } = req.params;
-  const post = office.find(oneoffice =&gt; oneoffice.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
+  const office = offices.find(oneoffice =&gt; oneoffice.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (office) {
     return res.status(200).json({
       message: "one office found",
-      onePost: post
+      onePost: office
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1099,15 +1057,15 @@ static getOneoffice(req, res) {
 //get candidate by id
 static getOnecandidate(req, res) {
   const { id } = req.params;
-  const post = candidates.find(onecandidates =&gt; onecandidates.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
+  const candidate = candidates.find(onecandidates =&gt; onecandidates.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (candidate) {
     return res.status(200).json({
-      message: "one candidates found",
-      onePost: post
+      message: "one candidate found",
+      onePost: candidate
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
-      error: "no candidates found with that id"
+      error: "no candidate found with that id"
     });
   }
 }
@@ -1115,11 +1073,11 @@ static getOnecandidate(req, res) {
 //get votes by id
 static getOnevote(req, res) {
   const { id } = req.params;
-  const post = votes.find(onevotes =&gt; onevotes.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
+  const vote = votes.find(onevotes =&gt; onevotes.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (vote) {
     return res.status(200).json({
       message: "one vote found",
-      onePost: post
+      onePost: vote
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1131,11 +1089,11 @@ static getOnevote(req, res) {
 //get petition by id
 static getOnepetition(req, res) {
   const { id } = req.params;
-  const post = petition.find(onepetition =&gt; onepetition.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
+  const petition = petitions.find(onepetition =&gt; onepetition.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (petition) {
     return res.status(200).json({
       message: "one petition found",
-      onePost: post
+      onePost: petition
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1148,44 +1106,44 @@ static getOnepetition(req, res) {
 &nbsp;
 static updateoffice(req, res) {
   const { id } = <span class="cstat-no" title="statement not covered" >req.params;</span>
-  const post = <span class="cstat-no" title="statement not covered" >office.find(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >updatePost =&gt; updatePost.id == id);</span></span></span>
-<span class="cstat-no" title="statement not covered" >  if (post) {</span>
-    (<span class="cstat-no" title="statement not covered" >post.name = req.body.name), (post.type=req.body.type),(post.body = req.body.body);</span>
+  const office = <span class="cstat-no" title="statement not covered" >offices.find(<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >updatePost =&gt; updatePost.id == id);</span></span></span>
+<span class="cstat-no" title="statement not covered" >  if (office) {</span>
+    (<span class="cstat-no" title="statement not covered" >office.name = req.body.name), (office.type=req.body.type),(office.body = req.body.body);</span>
 <span class="cstat-no" title="statement not covered" >    return res.status(201).json({</span>
       message: "successfully updated",
-      updatePost: post
+      updatePost: office
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
-      error: "post cannot be updated"
+      error: "office cannot be updated"
     });
   }
 }
 &nbsp;
 static updateparty(req, res) {
   const { id } = req.params;
-  const post = parties.find(updatePost =&gt; updatePost.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
-    (post.name = req.body.name), (post.HQAddress=req.body.HQAddress), (post.logourl=req.body.logourl), (post.body = req.body.body);
+  const party = parties.find(updatePost =&gt; updatePost.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (party) {
+    (party.name = req.body.name), (party.HQAddress=req.body.HQAddress), (party.logourl=req.body.logourl), (party.body = req.body.body);
     return res.status(201).json({
       message: "successfully updated",
-      updatePost: post
+      updatePost: party
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
-      error: "post cannot be updated"
+      error: "party cannot be updated"
     });
   }
 }
 &nbsp;
 static updateuser(req, res) {
   const { id } = req.params;
-  const post = user.find(updatePost =&gt; updatePost.id == id);
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (post) {
-        (post.firstname = req.body.firstname), (post.lastname=req.body.lastname), (post.othername=req.body.othername),(post.email=req.body.email),(post.phonenumber=req.body.phonenumber),(post.passporturl=req.body.passporturl),(post.body = req.body.body);
+  const user = users.find(updatePost =&gt; updatePost.id == id);
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (user) {
+        (user.firstname = req.body.firstname), (user.lastname=req.body.lastname), (user.othername=req.body.othername),(user.email=req.body.email),(user.phonenumber=req.body.phonenumber),(user.passporturl=req.body.passporturl),(user.body = req.body.body);
     return res.status(201).json({
       message: "user successfully updated",
-      updatePost: post
+      updatePost: user
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1198,17 +1156,17 @@ static updateuser(req, res) {
 &nbsp;
   static deleteparties(req, res) {
     let { id } = req.params;
-    const findPost = parties.find(post =&gt; {
+    const findparty = parties.find(post =&gt; {
       return post.id == id;
     });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (findPost) {
-      parties.pop(findPost);
-      const newparties = parties.filter(post =&gt; {
-        return post !== findPost;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (findparty) {
+      parties.pop(findparty);
+      const newparty = parties.filter(post =&gt; {
+        return post !== findparty;
       });
       res.status(200).json({
         message: "party successfully deleted",
-        Posts: newparties
+        Posts: newparty
       });
     } else {
 <span class="cstat-no" title="statement not covered" >      res.status(400).json({</span>
@@ -1219,17 +1177,17 @@ static updateuser(req, res) {
 &nbsp;
   static deleteuser(req, res) {
     let { id } = req.params;
-    const findPost = user.find(post =&gt; {
+    const finduser = users.find(post =&gt; {
       return post.id == id;
     });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (findPost) {
-      user.pop(findPost);
-      const newparties = user.filter(post =&gt; {
-        return post !== findPost;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (finduser) {
+      users.pop(finduser);
+      const newuser = users.filter(post =&gt; {
+        return post !== finduser;
       });
       res.status(200).json({
         message: "user successfully deleted",
-        Posts: newparties
+        Posts: newuser
       });
     } else {
 <span class="cstat-no" title="statement not covered" >      res.status(400).json({</span>
@@ -1239,17 +1197,17 @@ static updateuser(req, res) {
   }
   static deletecandidate(req, res) {
     let { id } = req.params;
-    const findPost = candidates.find(post =&gt; {
+    const findcandidate = candidates.find(post =&gt; {
       return post.id == id;
     });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (findPost) {
-      candidates.pop(findPost);
-      const newparties = candidates.filter(post =&gt; {
-        return post !== findPost;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (findcandidate) {
+      candidates.pop(findcandidate);
+      const newcandidate = candidates.filter(post =&gt; {
+        return post !== findcandidate;
       });
       res.status(200).json({
         message: "candidate successfully deleted",
-        Posts: newparties
+        Posts: newcandidate
       });
     } else {
 <span class="cstat-no" title="statement not covered" >      res.status(400).json({</span>
@@ -1260,17 +1218,17 @@ static updateuser(req, res) {
 &nbsp;
   static deleteoffice(req, res) {
     let { id } = req.params;
-    const findPost = office.find(post =&gt; {
+    const findoffice = offices.find(post =&gt; {
       return post.id == id;
     });
-    <span class="missing-if-branch" title="else path not taken" >E</span>if (findPost) {
-      office.pop(findPost);
-      const newparties = office.filter(post =&gt; {
-        return post !== findPost;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (findoffice) {
+      offices.pop(findoffice);
+      const newoffice = offices.filter(post =&gt; {
+        return post !== findoffice;
       });
       res.status(200).json({
         message: "office successfully deleted",
-        Posts: newparties
+        Posts: newoffice
       });
     } else {
 <span class="cstat-no" title="statement not covered" >      res.status(400).json({</span>
@@ -1283,17 +1241,17 @@ static updateuser(req, res) {
 &nbsp;
 static deletepetition(req, res) {
   let { id } = req.params;
-  const findPost = petition.find(post =&gt; {
+  const findpetition = petitions.find(post =&gt; {
     return post.id == id;
   });
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (findPost) {
-    petition.pop(findPost);
-    const newparties = petition.filter(post =&gt; {
-      return post !== findPost;
+  <span class="missing-if-branch" title="else path not taken" >E</span>if (findpetition) {
+    petitions.pop(findpetition);
+    const newpetition = petitions.filter(post =&gt; {
+      return post !== findpetition;
     });
     res.status(200).json({
       message: "petition successfully deleted",
-      Posts: newparties
+      Posts: newpetition
     });
   } else {
 <span class="cstat-no" title="statement not covered" >    res.status(400).json({</span>
@@ -1315,7 +1273,7 @@ export default postsController;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Feb 05 2019 18:10:18 GMT+0200 (South Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 06 2019 11:11:08 GMT+0200 (South Africa Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

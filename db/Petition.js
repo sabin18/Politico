@@ -1,4 +1,4 @@
-const petition = [
+const petitions = [
     {
         id:1,
         createdon:1,
@@ -15,4 +15,4 @@ const petition = [
     },
     ];
     
-    export default petition;
+    export default petitions;
