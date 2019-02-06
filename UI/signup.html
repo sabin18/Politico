@@ -16,13 +16,10 @@
   <div class="menu">
   <a class="active" href="politico.html">Home</a>
   <a href="#news">News</a>
-  <a href="view_elections.html">Election results</a>
   <a href="#contact">Contact</a>
    <a href="#contact">About</a>
    <a href="#contact">Help</a>
   <div class="menu-right">
-    <i><input type="text"name="user_query" placeholder="search here ...."/></i>
-    <i><input class="button" type="submit"name="search" value="search"/></i>
     <i><div class="dropdown">
   <button onclick="myFunction()" class="dropbtn">login</button>
   <div id="myDropdown" class="dropdown-content">
@@ -54,7 +51,8 @@ input[type=text3], input[type=password] {
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border: none;
+  border: 2px;
+  border-color:skyblue; 
   background: #f1f1f1;
 }
 
@@ -62,6 +60,7 @@ input[type=text3], input[type=password] {
 input[type=text3]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
+  border: 1px;
 }
 
 /* Set a style for all buttons */
@@ -113,11 +112,12 @@ button:hover {
 }
 
 /* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
+.modal-content1 {
+  color:white;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  background-image: url(images/Sign-Background.jpg); 
 }
 
 /* Style the horizontal ruler */
@@ -125,7 +125,10 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
- 
+ .signup{
+
+  background-image: url(images/Sign-Background.jpg); 
+}
 /* The Close Button (x) */
 .close {
   position: absolute;
@@ -147,6 +150,7 @@ hr {
   content: "";
   clear: both;
   display: table;
+
 }
 
 /* Change styles for cancel button and signup button on extra small screens */
@@ -159,25 +163,32 @@ hr {
 <body>
 
 
-  <form class="modal-content" action="/action_page.php">
+  <form class="modal-content1" action="/action_page.php">
     <div class="container1">
       <h1>Sign Up</h1>
-      <p>Please fill in this form to create an account.</p>
+      <p>Please fill in this form to create an account on politico.</p>
       <hr>
       <label for="fname"><b>First name:</b></label>
       <input type="text3" placeholder="First name" name="fname" required>
 
       <label for="sname"><b>Second name:</b></label>
-      <input type="text3" placeholder="Enter Email" name="sname" required>
+      <input type="text3" placeholder="Second name" name="sname" required>
 
       <label for="oname"><b>Other name:</b></label>
-      <input type="text3" placeholder="Second name" name="oname" required>
+      <input type="text3" placeholder="other name" name="oname" required>
 
       <label for="email"><b>Email:</b></label>
       <input type="text3" placeholder="Enter Email" name="email" required>
 
       <label for="phone"><b>Phone number:</b></label>
       <input type="text3" placeholder="Phone number" name="phone" required>
+
+      <label for="user"><b>select type of user:</b></label>
+      <select>
+        <option>select your type</option>
+        <option>Politician</option>
+        <option>User</option>
+      </select>
 
       <label for="psw"><b>Password:</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
