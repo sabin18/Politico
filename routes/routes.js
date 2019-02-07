@@ -20,6 +20,7 @@ router.post("/api/v1/office/", postController.createoffice);
 
 
 
+
 //get by id data routers
 router.get("/api/v1/user/:id", postController.getOneuser);
 router.get("/api/v1/parties/:id", postController.getOneparty);
@@ -32,6 +33,10 @@ router.get("/api/v1/petition/:id", postController.getOnepetition);
 router.put("/api/v1/parties/:id", postController.updateparty);
 router.put("/api/v1/office/:id", postController.updateoffice);
 router.put("/api/v1/user/:id", postController.updateuser);
+
+
+//updates patch router
+router.patch("/api/v1/parties/:id/:name", postController.updatepartyname);
 
 
 
