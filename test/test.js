@@ -63,6 +63,22 @@ describe('Parties routes test', () => {
             done();
             });
     });
+    
+    
+    it('it should be able to Update a name of a party', (done)=>{
+        const party={
+            id:1,
+            name:"RPF",
+        };
+        chai.request(app)
+            .patch('/api/v1/parties/1/RPF')
+            .send(party)
+            .end((err, res)=>{
+                res.should.have.property('status').eql(201);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
 
     it('it should be able to Delete a party', (done)=>{
         chai.request(app)
@@ -211,6 +227,8 @@ describe('office routes test', () => {
             done();
             });
     });
+
+    
 
     it('it should be able to Delete an office', (done)=>{
         chai.request(app)

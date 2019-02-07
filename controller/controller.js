@@ -8,10 +8,13 @@ import moment from "moment";
 
 class postsController {
   static getparties(req, res) {
+    if(req){
     return res.json({
       message: "List of all parties",
       posts: parties
+
     });
+  }
 }
     static getuser(req, res) {
         return res.json({
@@ -257,7 +260,7 @@ static updateoffice(req, res) {
     });
   }
 }
-
+ 
 static updateparty(req, res) {
   const { id } = req.params;
   const party = parties.find(updatePost => updatePost.id == id);
@@ -273,6 +276,29 @@ static updateparty(req, res) {
     });
   }
 }
+
+
+//update function (patch)
+static updatepartyname(req, res) {
+  const { id } = req.params;
+  const { name } = req.params;
+  const party = parties.find(updatePost => updatePost.id == id);
+  const partyname = parties.find(updatePost => updatePost.name == name);
+
+  if (party&&partyname) {
+    (party.name = req.body.name),(party.body = req.body.body);
+    return res.status(201).json({
+      message: "party successfully  updated",
+      updatePost: party
+    });
+  } else {
+    res.status(400).json({
+      error: "party cannot be updated"
+    });
+  }
+}
+
+
 
 static updateuser(req, res) {
   const { id } = req.params;
@@ -333,6 +359,8 @@ static updateuser(req, res) {
       });
     }
   }
+
+  
   static deletecandidate(req, res) {
     let { id } = req.params;
     const findcandidate = candidates.find(post => {
