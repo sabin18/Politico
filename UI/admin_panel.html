@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>politico software </title>
+<link rel="stylesheet" type="text/css" href="poli.css">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="main">
+
+<div class="content">
+   
+
+<!-- menu -->
+  <div class="menu">
+  <i><h4>welcome:kanamugire aristide</h4></i>
+
+  </div>
+  <!--end of menu  -->
+<section>
+  
+  
+  <div class="sidenav">
+    
+<div class="circle1">
+<h2>Profile</h2>
+<h6>Name:kanamugire aristide</h6>
+<img src="images/arist.jpg"  class="circle">
+
+
+</div><br>
+<i><a href="admin_panel.html">admin home</a></i><br>
+  <i><a href="add_political_party.html">create political party</a></i><br>
+    <i><a href="add_government_office.html">Create a government office</a></i><br>
+    <i><a href="view_politicaloffice.html">view political office</a></i><br>
+    <i><a href="view.html">view political party</a></i><br>
+    <i><a href="view_politician.html">view politician</a></i><br>
+    <i><a href="view_user.html">view users</a></i><br>
+    <i><a href="election_results.html">view election results</a></i><br>
+    <i><a href="resetpassword.html">Reset password</a></i><br>
+    <i><a href="politico.html">Logout</a></i><br>
+  </div>
+    
+<div class="main2">
+  <i align="center"><h2>USER PANEL</h2></i>
+  <h2>candidates view</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Political party.." title="Type in a name">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:40%;">Name</th>
+    <th style="width:40%;">HQ address</th>
+    <th style="width:40%;">Contact</th>
+    <th style="width:40%;">Logo</th>
+    <th style="width:40%;">Edit</th>
+    <th style="width:40%;">Delete</th>
+  </tr>
+  <tr>
+    <td><h4>Rwandan Patriotic Front</h4></td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/fpr.png" width="70" height="70"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button  class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Centrist Democratic Party</td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/centrist.jpg" width="70" height="70"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td></h4>Ideal Democratic Party</h4></td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/ideal.png" width="50" height="50"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Rwandan Socialist Party</td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/social democrat.png" width="50" height="50"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Democratic Union of the Rwandan People</td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/democratic union.jpg" width="50" height="50"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Social Democratic Party</td>
+   <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/social party.png" width="50" height="50"></td>
+   <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Liberal Party</td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/pl party.png" width="50" height="50"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Party for Progress and Concord</td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/ppc.png" width="50" height="50"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Democratic Green Party of Rwanda</td>
+   <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/green party.jpg" width="50" height="50"></td>
+    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+    <td><button class="button2">Delete</button></td>
+  </tr>
+  <tr>
+    <td>Social Party Imberakuri</td>
+    <td>kigali</td>
+    <td>0784536727</td>
+    <td><img src="party logo/imberakuri.png" width="50" height="50"></td>
+   <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
+   <td><button class="button2">Delete</button></td>
+  </tr>
+</table>
+
+
+<div id="id01" class="modal5">
+
+  <span onclick="document.getElementById('id01').style.display='none'" class="close5" title="Close Modal">&times;</span>
+  <form class="modal-content5" action="/action_page.php">
+    <div class="container5">
+      <h1>EDIT POLITICAL PARTY</h1>
+      
+      <hr>
+      <label for="fname"><b>Party name:</b></label>
+      <input type="text5" placeholder="Party name" value="fpr" name="fname" required>
+
+      <label for="sname"><b>HQ address:</b></label>
+      <input type="text5" placeholder="HQ address" value="kigali" name="sname" required>
+
+      <label for="oname"><b>Contact:</b></label>
+      <input type="text5" placeholder="Enter Phone number" value="0784536727" name="oname" required>
+
+      <label><b>Logo:</b></label>
+      <input type="file" name="email" required><br>
+
+      <div class="clearfix5">
+        <button type="submit"  class="button1">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+</div>
+</div>
+</div>
+<br>
+
+</section>
+
+<footer>
+  <p>Design by izere roger sabin</p>
+</footer>
+
+</body>
+</html>
