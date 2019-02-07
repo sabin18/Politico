@@ -1,1 +1,1 @@
-web: NODE_ENV=production nodemon transpiled/index.js
+web: NODE_ENV=production nodemon --exec transpiled/index.js
