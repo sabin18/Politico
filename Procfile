@@ -1,1 +1,1 @@
-web: nodemon transpiled/index.js
+web: nodemon src/server.js
