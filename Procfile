@@ -1,1 +1,1 @@
-web: nodemon transpiled/index.js
+web: NODE_ENV=production nodemon --exec babel-node index.js
