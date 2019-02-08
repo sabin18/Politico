@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>politico software system</title>
+<link rel="stylesheet" type="text/css" href="poli2.css">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="content">
+   
+
+<!-- menu -->
+  <div class="menu">
+  <a class="active" href="politico.html">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+   <a href="#contact">About</a>
+   <a href="#contact">Help</a>
+  <div class="menu-right">
+    <i><div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">login</button>
+  <div id="myDropdown" class="dropdown-content">
+    <i><a href="login.html">Login as Admin</a></i>
+    <i><a href="Politician_login.html">Login as politician</a></i>
+    <i><a href="user_login.html">Login as user</a></i>
+  </div>
+</div></i>
+
+
+    <i><button class="button">Sign up</button></i>
+  </div>
+</div>
+
+  </div><br>
+  <!--end of menu  -->
+</head>
+<body>
+
+
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Full-width input fields */
+input[type=text3], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: 2px;
+  border-color:skyblue; 
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text3]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+  border: 1px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container1 {
+  padding: 16px;
+  background: url(images/politico1.jpg) no-repeat scroll 0 5px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content1 {
+  color:white;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  background-image: url(images/Sign-Background.jpg); 
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ .signup{
+
+  background-image: url(images/Sign-Background.jpg); 
+}
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+
+
+  <form class="modal-content1" action="/action_page.php">
+    <div class="container1">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account on politico.</p>
+      <hr>
+      <label for="fname"><b>First name:</b></label>
+      <input type="text3" placeholder="First name" name="fname" required>
+
+      <label for="sname"><b>Second name:</b></label>
+      <input type="text3" placeholder="Second name" name="sname" required>
+
+      <label for="oname"><b>Other name:</b></label>
+      <input type="text3" placeholder="other name" name="oname" required>
+
+      <label for="email"><b>Email:</b></label>
+      <input type="text3" placeholder="Enter Email" name="email" required>
+
+      <label for="phone"><b>Phone number:</b></label>
+      <input type="text3" placeholder="Phone number" name="phone" required>
+
+      <label for="user"><b>select type of user:</b></label>
+      <select>
+        <option>select your type</option>
+        <option>Politician</option>
+        <option>User</option>
+      </select>
+
+      <label for="psw"><b>Password:</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="submit" class="signupbtn">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<footer>
+  <p>Design by izere roger sabin</p>
+</footer>
+
+</body>
+</html>

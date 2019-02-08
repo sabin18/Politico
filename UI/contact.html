@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>politico software system</title>
+<link rel="stylesheet" type="text/css" href="poli2.css">
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+
+<header>
+  
+  <h2>POLITICO SOFTWARE SYSTEM</h2>
+  
+</header>
+<div class="content">
+   
+
+<!-- menu -->
+  <div class="menu">
+  <a class="active" href="politico.html">Home</a>
+  <a href="#news">News</a>
+  <a href="view_elections.html">Election results</a>
+  <a href="contact.html">Contact</a>
+   <a href="about.html">About</a>
+  <div class="menu-right">
+    <i><input type="text"name="user_query" placeholder="search here ...."/></i>
+    <i><input class="button" type="submit"name="search" value="search"/></i>
+    <i><div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">login</button>
+  <div id="myDropdown" class="dropdown-content">
+    <i><a href="login.html">Login as Admin</a></i>
+    <i><a href="Politician_login.html">Login as politician</a></i>
+    <i><a href="user_login.html">Login as user</a></i>
+  </div>
+</div></i>
+
+
+    <i><input type="button" value="Sign up" class="button" onclick="window.location.href='signup.html'"/>
+  </div>
+</div>
+
+  </div>
+
+  <!--end of menu  -->
+  <body>
+
+<h3>Contact Form</h3>
+
+<div class="container3">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+<footer>
+  <p>Design by izere roger sabin</p>
+</footer>
+
+</body>
+</html>
