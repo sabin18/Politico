@@ -8,6 +8,9 @@
     "coveralls": "nyc report --reporter=text-lcov| coveralls",
     "compile": "babel ./server -d ./compiled"
   },
+  "engines": {
+    "node": "11.7.0"
+},
   "author": "roger sabin",
   "license": "ISC",
   "keywords": [],
@@ -18,6 +21,11 @@
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "morgan": "^1.9.1",
+<<<<<<< HEAD
+=======
+    "pg": "^7.8.0",
+    "nodemon": "^1.18.9",
+>>>>>>> 569c1fef11c82a820c0a44f69ade0e2c11a30f63
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0"
   },
@@ -36,8 +44,11 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
+<<<<<<< HEAD
     "pg": "^7.8.0",
     "nodemon": "^1.18.9",
+=======
+>>>>>>> 569c1fef11c82a820c0a44f69ade0e2c11a30f63
     "nyc": "^13.1.0",
     "rimraf": "^2.6.3"
   }
