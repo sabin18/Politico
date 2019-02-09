@@ -41,11 +41,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.2.0",
     "mocha-lcov-reporter": "^1.3.0",
-<<<<<<< HEAD
     "pg": "^7.8.0",
     "nodemon": "^1.18.9",
-=======
->>>>>>> 569c1fef11c82a820c0a44f69ade0e2c11a30f63
     "nyc": "^13.1.0",
     "rimraf": "^2.6.3"
   }
