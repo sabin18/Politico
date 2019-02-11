@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <title>politico software </title>
-<link rel="stylesheet" type="text/css" href="poli.css">
+<link rel="stylesheet" type="text/css" href="css/poli.css">
+<script src="js/javascriptfunction.js"></script>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +49,7 @@
   <i align="center"><h2>USER PANEL</h2></i>
   <h2>candidates view</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Political party.." title="Type in a name">
+<input type="text" id="myInput" onkeyup="searchparty()" placeholder="Search for Political party.." title="Type in a name">
 
 <table id="myTable">
   <tr class="header">
@@ -63,7 +64,7 @@
     <td><h4>Rwandan Patriotic Front</h4></td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/fpr.png" width="70" height="70"></td>
+    <td><img src="images/fpr.png" width="70" height="70"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button  class="button2">Delete</button></td>
   </tr>
@@ -71,7 +72,7 @@
     <td>Centrist Democratic Party</td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/centrist.jpg" width="70" height="70"></td>
+    <td><img src="images/centrist.jpg" width="70" height="70"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -79,7 +80,7 @@
     <td></h4>Ideal Democratic Party</h4></td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/ideal.png" width="50" height="50"></td>
+    <td><img src="images/ideal.png" width="50" height="50"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -87,7 +88,7 @@
     <td>Rwandan Socialist Party</td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/social democrat.png" width="50" height="50"></td>
+    <td><img src="images/social democrat.png" width="50" height="50"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -95,7 +96,7 @@
     <td>Democratic Union of the Rwandan People</td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/democratic union.jpg" width="50" height="50"></td>
+    <td><img src="images/democratic union.jpg" width="50" height="50"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -103,7 +104,7 @@
     <td>Social Democratic Party</td>
    <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/social party.png" width="50" height="50"></td>
+    <td><img src=images/social party.png" width="50" height="50"></td>
    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -111,7 +112,7 @@
     <td>Liberal Party</td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/pl party.png" width="50" height="50"></td>
+    <td><img src="images/pl party.png" width="50" height="50"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -119,7 +120,7 @@
     <td>Party for Progress and Concord</td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/ppc.png" width="50" height="50"></td>
+    <td><img src="images/ppc.png" width="50" height="50"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -127,7 +128,7 @@
     <td>Democratic Green Party of Rwanda</td>
    <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/green party.jpg" width="50" height="50"></td>
+    <td><img src="images/green party.jpg" width="50" height="50"></td>
     <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
     <td><button class="button2">Delete</button></td>
   </tr>
@@ -135,7 +136,7 @@
     <td>Social Party Imberakuri</td>
     <td>kigali</td>
     <td>0784536727</td>
-    <td><img src="party logo/imberakuri.png" width="50" height="50"></td>
+    <td><img src="images/imberakuri.png" width="50" height="50"></td>
    <td><button onclick="document.getElementById('id01').style.display='block'" class="button1">Edit</button></td>
    <td><button class="button2">Delete</button></td>
   </tr>
@@ -169,39 +170,7 @@
   </form>
 </div>
 
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
 </div>
 </div>
 </div>

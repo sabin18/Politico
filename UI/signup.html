@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <title>politico software system</title>
-<link rel="stylesheet" type="text/css" href="poli2.css">
+<link rel="stylesheet" type="text/css" href="css/poli2.css">
+<script src="js/javascriptfunction.js"></script>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -205,27 +206,7 @@ hr {
     </div>
   </form>
 </div>
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 <footer>
   <p>Design by izere roger sabin</p>
 </footer>
