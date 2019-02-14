@@ -18,32 +18,11 @@ describe('office routes test', () => {
             done();
           });
     });
-    
-
-    it('it should GET a single office', (done)=>{
-        chai.request(app)
-            .get('/api/v1/office/1')
-            .end((err, res)=>{
-                res.should.have.property('status').eql(200);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
-
-    it('it should not GET a single office', (done)=>{
-        chai.request(app)
-            .get('/api/v1/office/11')
-            .end((err, res)=>{
-                res.should.have.property('status').eql(400);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
 
     it('it should be able to Create an office', (done)=>{
         const offices={
             id:1,
-            type:"fedelal",
+            type:"federal",
             name:"police",
         };
         chai.request(app)
@@ -59,14 +38,15 @@ describe('office routes test', () => {
     it('it should be able to Update an office', (done)=>{
         const offices={
             id:1,
-            type:"fedelal" ,
+            type:"federal",
             name:"police",
         };
         chai.request(app)
-            .put('/api/v1/parties/1')
+            .put('/api/v1/office/1')
             .send(offices)
             .end((err, res)=>{
-                res.should.have.property('status').eql(201);
+                console.log(res.body);
+                res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
             done();
             });
@@ -82,12 +62,35 @@ describe('office routes test', () => {
             .put('/api/v1/parties/14')
             .send(offices)
             .end((err, res)=>{
+                res.should.have.property('status').eql(404);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
+
+
+    it('it should GET a single office', (done)=>{
+        chai.request(app)
+            .get('/api/v1/office/1')
+            .end((err, res)=>{
+                res.should.have.property('status').eql(200);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
+
+    it('it should not GET a single office', (done)=>{
+        chai.request(app)
+            .get('/api/v1/office/45')
+            .end((err, res)=>{
                 res.should.have.property('status').eql(400);
                 res.body.should.be.a('object');
             done();
             });
     });
 
+    
+    
     
 
     it('it should be able to Delete an office', (done)=>{
@@ -104,7 +107,7 @@ describe('office routes test', () => {
         chai.request(app)
             .delete('/api/v1/office/12')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });

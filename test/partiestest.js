@@ -18,28 +18,6 @@ describe('Parties routes test', () => {
           });
     });
     
-    
-
-    it('it should GET a single party', (done)=>{
-        chai.request(app)
-            .get('/api/v1/parties/1')
-            .end((err, res)=>{
-                res.should.have.property('status').eql(200);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
-
-    it('it should not GET a single party', (done)=>{
-        chai.request(app)
-            .get('/api/v1/parties/11')
-            .end((err, res)=>{
-                res.should.have.property('status').eql(400);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
-
     it('it should be able to Create a party', (done)=>{
         const party={
             id:1,
@@ -57,6 +35,30 @@ describe('Parties routes test', () => {
             });
     });
 
+    
+
+    it('it should GET a single party', (done)=>{
+        chai.request(app)
+            .get('/api/v1/parties/1')
+            .end((err, res)=>{
+                res.should.have.property('status').eql(200);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
+
+    it('it should not GET a single party', (done)=>{
+        chai.request(app)
+            .get('/api/v1/parties/11')
+            .end((err, res)=>{
+                res.should.have.property('status').eql(404);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
+
+    
+
     it('it should be able to Update a party', (done)=>{
         const party={
             id:1,
@@ -68,7 +70,7 @@ describe('Parties routes test', () => {
             .put('/api/v1/parties/1')
             .send(party)
             .end((err, res)=>{
-                res.should.have.property('status').eql(201);
+                res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
             done();
             });
@@ -85,7 +87,7 @@ describe('Parties routes test', () => {
             .put('/api/v1/parties/12')
             .send(party)
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });
@@ -101,7 +103,7 @@ describe('Parties routes test', () => {
             .patch('/api/v1/parties/1/RPF')
             .send(party)
             .end((err, res)=>{
-                res.should.have.property('status').eql(201);
+                res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
             done();
             });
@@ -116,7 +118,7 @@ describe('Parties routes test', () => {
             .patch('/api/v1/parties/12/RPFu')
             .send(party)
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });
@@ -124,7 +126,7 @@ describe('Parties routes test', () => {
 
     it('it should be able to Delete a party', (done)=>{
         chai.request(app)
-            .delete('/api/v1/parties/2')
+            .delete('/api/v1/parties/1')
             .end((err, res)=>{
                 res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
@@ -134,7 +136,7 @@ describe('Parties routes test', () => {
 
     it('it should not be able to Delete a party', (done)=>{
         chai.request(app)
-            .delete('/api/v1/parties/21')
+            .delete('/api/v1/parties/y')
             .end((err, res)=>{
                 res.should.have.property('status').eql(400);
                 res.body.should.be.a('object');

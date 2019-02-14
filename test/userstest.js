@@ -21,26 +21,6 @@ describe('user routes test', () => {
     });
     
 
-    it('it should GET a single user', (done)=>{
-        chai.request(app)
-            .get('/api/v1/user/1')
-            .end((err, res)=>{
-                res.should.have.property('status').eql(200);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
-
-    it('it should not GET a single user', (done)=>{
-        chai.request(app)
-            .get('/api/v1/user/7')
-            .end((err, res)=>{
-                res.should.have.property('status').eql(400);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
-
     it('it should be able to Create a user', (done)=>{
         const users={
             id:1,
@@ -62,6 +42,28 @@ describe('user routes test', () => {
             });
     });
 
+    it('it should GET a single user', (done)=>{
+        chai.request(app)
+            .get('/api/v1/user/1')
+            .end((err, res)=>{
+                res.should.have.property('status').eql(200);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
+
+    it('it should not GET a single user', (done)=>{
+        chai.request(app)
+            .get('/api/v1/user/7')
+            .end((err, res)=>{
+                res.should.have.property('status').eql(404);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
+
+    
+
     it('it should be able to Update a user', (done)=>{
         const users={
             id:1,
@@ -77,7 +79,7 @@ describe('user routes test', () => {
             .put('/api/v1/user/1')
             .send(users)
             .end((err, res)=>{
-                res.should.have.property('status').eql(201);
+                res.should.have.property('status').eql(200);
                 res.body.should.be.a('object');
             done();
             });
@@ -98,7 +100,7 @@ describe('user routes test', () => {
             .put('/api/v1/user/6')
             .send(users)
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });
@@ -116,9 +118,9 @@ describe('user routes test', () => {
 
     it('it should not be able to Delete a user', (done)=>{
         chai.request(app)
-            .delete('/api/v1/user/33')
+            .delete('/api/v1/user/955')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });

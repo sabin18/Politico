@@ -18,6 +18,24 @@ describe('petition routes test', () => {
           });
     });
     
+    it('it should be able to Create a petiton', (done)=>{
+        const petitions={
+            id:1,
+        createdon:1,
+        createdby:1,
+        office:3,
+        body:"i don't agree with final votes",
+
+        };
+        chai.request(app)
+            .post('/api/v1/petition')
+            .send(petitions)
+            .end((err, res)=>{
+                res.should.have.property('status').eql(200);
+                res.body.should.be.a('object');
+            done();
+            });
+    });
 
     it('it should GET a single petition', (done)=>{
         chai.request(app)
@@ -33,31 +51,14 @@ describe('petition routes test', () => {
         chai.request(app)
             .get('/api/v1/petition/6')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });
     });
 
 
-    it('it should be able to Create a petiton', (done)=>{
-        const petitions={
-            id:1,
-        createdon:1,
-        createdby:1,
-        office:1,
-        body:"i don't agree with final votes",
-
-        };
-        chai.request(app)
-            .post('/api/v1/petition')
-            .send(petitions)
-            .end((err, res)=>{
-                res.should.have.property('status').eql(200);
-                res.body.should.be.a('object');
-            done();
-            });
-    });
+    
 
 
     it('it should be able to Delete a petiton', (done)=>{
@@ -74,7 +75,7 @@ describe('petition routes test', () => {
         chai.request(app)
             .delete('/api/v1/petition/7')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });

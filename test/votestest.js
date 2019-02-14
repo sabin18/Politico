@@ -20,6 +20,26 @@ describe('votes routes test', () => {
           });
     });
     
+    it('it should be able to vote for candidates', (done)=>{
+        const newvotes = {
+
+            id:1,
+            createdon:676,
+            createdby:1,
+            office:1,
+            candidate:3,
+            
+          };
+        chai.request(app)
+            .post('/api/v1/votes')
+            .send(newvotes)
+            .end((err, res)=>{
+                res.should.have.property('status').eql(200);
+                res.body.should.be.a('object');
+            done();
+            });
+            
+    });
 
     it('it should GET a single vote', (done)=>{
         chai.request(app)
@@ -35,7 +55,7 @@ describe('votes routes test', () => {
         chai.request(app)
             .get('/api/v1/votes/8')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });

@@ -18,6 +18,23 @@ describe('candidates routes test', () => {
           });
     });
     
+    it('it should be able to Create a candidates', (done)=>{
+        const candidates={
+            id:1,
+        office:1,
+        party:1,
+        candidate:1,
+        };
+        chai.request(app)
+            .post('/api/v1/candidates')
+            .send(candidates)
+            .end((err, res)=>{
+                res.should.have.property('status').eql(200);
+                res.body.should.be.a('object');
+            done();
+            });
+            
+    });
 
     it('it should GET a single candidate', (done)=>{
         chai.request(app)
@@ -33,29 +50,13 @@ describe('candidates routes test', () => {
         chai.request(app)
             .get('/api/v1/candidates/11')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });
     });
 
-    it('it should be able to Create a candidates', (done)=>{
-        const candidates={
-            id:1,
-        office:1,
-        party:1,
-        candidate:1,
-        };
-        chai.request(app)
-            .post('/api/v1/office')
-            .send(candidates)
-            .end((err, res)=>{
-                res.should.have.property('status').eql(200);
-                res.body.should.be.a('object');
-            done();
-            });
-            
-    });
+    
 
 
     it('it should be able to Delete a candidate', (done)=>{
@@ -72,7 +73,7 @@ describe('candidates routes test', () => {
         chai.request(app)
             .delete('/api/v1/candidates/9')
             .end((err, res)=>{
-                res.should.have.property('status').eql(400);
+                res.should.have.property('status').eql(404);
                 res.body.should.be.a('object');
             done();
             });
