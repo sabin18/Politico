@@ -5,7 +5,7 @@ import officesController from "../controller/officecontroller";
 import usersController from "../controller/usercontroller";
 import candidatesController from "../controller/candidatecontroller";
 import petitionsController from "../controller/petitioncontroller";
-import voteController from "../controller/votesController";
+import voteController from "../controller/votescontroller";
 
 
 //post routers
