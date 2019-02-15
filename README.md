@@ -29,10 +29,33 @@ The general elections are around the corner, hence it’s a political season. Ge
 ##### DELETE: /api/v1/office/:id/
 ##### PUT :/api/v1/office/:id/
 ##### POST :/api/v1/parties/
- 
-# other materials used
 
-#### TravisCI for Continous Integration(for showing test the test)
+# addition end points
+
+## user end points
+
+##### GET:/api/v1/user/ 
+##### GET ONE:/api/v1/user/:id 
+##### DELETE: /api/v1/user/:id/
+##### PUT :/api/v1/user/:id/
+##### POST :/api/v1/user/
+ 
+ ## candidates end points
+
+##### GET:/api/v1/candidates/ 
+##### GET ONE:/api/v1/candidates/:id 
+##### DELETE: /api/v1/candidates/:id/
+##### PUT :/api/v1/candidates/:id/
+##### POST :/api/v1/candidates/
+
+## votes end points
+
+##### GET:/api/v1/votes/ 
+##### GET ONE:/api/v1/votes/:id 
+
+# Other materials used
+
+#### TravisCI for Continous Integration(for runnig  the tests and showing coverage)
 #### nyc for test coverage(for showing test the coverage)
 #### CodeClimate and Coveralls for badges(for showing the maintainability)
 #### Heroku for app Deployment (for hosting your end points)
