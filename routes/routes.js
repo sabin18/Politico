@@ -3,9 +3,9 @@ const router = express.Router();
 import partyController from "../controller/partycontroller";
 import officesController from "../controller/officecontroller";
 import usersController from "../controller/usercontroller";
-import candidatesController from "../controller/candidateController"
-import petitionsController from "../controller/petitionController"
-import voteController from "../controller/votesController"
+import candidatesController from "../controller/candidateController";
+import petitionsController from "../controller/petitionController";
+import voteController from "../controller/votesController";
 
 
 //post routers
