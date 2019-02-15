@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>29/29</span>
+        <span class='fraction'>35/35</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>29/29</span>
+        <span class='fraction'>35/35</span>
       </div>
     </div>
     <p class="quiet">
@@ -98,9 +98,6 @@
 <a name='L50'></a><a href='#L50'>50</a>
 <a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -115,9 +112,15 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -135,9 +138,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -147,54 +147,54 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import express from "express";
-import postController from "../controller/controller";
-&nbsp;
 const router = express.Router();
-//post routers
-router.get("/api/v1/parties", postController.getparties);
-router.get("/api/v1/user", postController.getuser);
-router.get("/api/v1/office", postController.getoffice);
-router.get("/api/v1/candidates", postController.getcandidates);
-router.get("/api/v1/votes", postController.getvotes);
-router.get("/api/v1/petition", postController.getpetition);
+import partyController from "../controller/partycontroller";
+import officesController from "../controller/officecontroller";
+import usersController from "../controller/usercontroller";
+import candidatesController from "../controller/candidateController"
+import petitionsController from "../controller/petitionController"
+import voteController from "../controller/votesController"
 &nbsp;
 &nbsp;
 //post routers
-router.post("/api/v1/parties", postController.createparties);
-router.post("/api/v1/user", postController.createuser);
-router.post("/api/v1/candidates/", postController.createcandidates);
-router.post("/api/v1/petition/", postController.createpetition);
-router.post("/api/v1/office/", postController.createoffice);
+router.get("/api/v1/parties", partyController.getparties);
+router.get("/api/v1/user", usersController.getuser);
+router.get("/api/v1/office", officesController.getoffice);
+router.get("/api/v1/candidates",candidatesController.getcandidates);
+router.get("/api/v1/votes", voteController.getvotes);
+router.get("/api/v1/petition", petitionsController.getpetition);
 &nbsp;
+//post routers
+router.post("/api/v1/parties", partyController.createparties);
+router.post("/api/v1/user", usersController.createuser);
+router.post("/api/v1/candidates/",candidatesController.createcandidates);
+router.post("/api/v1/petition/", petitionsController.createpetition);
+router.post("/api/v1/office/", officesController.createoffice);
+router.post("/api/v1/votes/", voteController. createvote);
 &nbsp;
-&nbsp;
-&nbsp;
-//get by id data routers
-router.get("/api/v1/user/:id", postController.getOneuser);
-router.get("/api/v1/parties/:id", postController.getOneparty);
-router.get("/api/v1/office/:id", postController.getOneoffice);
-router.get("/api/v1/candidates/:id", postController.getOnecandidate);
-router.get("/api/v1/votes/:id", postController.getOnevote);
-router.get("/api/v1/petition/:id", postController.getOnepetition);
+//get by id  routers
+router.get("/api/v1/user/:id", usersController.getOneuser);
+router.get("/api/v1/parties/:id", partyController.getOneparty);
+router.get("/api/v1/office/:id", officesController.getOneoffice);
+router.get("/api/v1/candidates/:id", candidatesController.getOnecandidate);
+router.get("/api/v1/votes/:id", voteController.getOnevote);
+router.get("/api/v1/petition/:id",petitionsController.getOnepetition);
 &nbsp;
 //updates routers
-router.put("/api/v1/parties/:id", postController.updateparty);
-router.put("/api/v1/office/:id", postController.updateoffice);
-router.put("/api/v1/user/:id", postController.updateuser);
+router.put("/api/v1/parties/:id",partyController.updateparty);
+router.put("/api/v1/office/:id",officesController.updateoffice);
+router.put("/api/v1/user/:id", usersController.updateuser);
 &nbsp;
 &nbsp;
-//updates patch router
-router.patch("/api/v1/parties/:id/:name", postController.updatepartyname);
-&nbsp;
-&nbsp;
-&nbsp;
+// patch router
+router.patch("/api/v1/parties/:id/:name", partyController.updatepartyname);
 &nbsp;
 //delete routers
-router.delete("/api/v1/parties/:id", postController.deleteparties);
-router.delete("/api/v1/user/:id", postController.deleteuser);
-router.delete("/api/v1/candidates/:id", postController.deletecandidate);
-router.delete("/api/v1/office/:id", postController.deleteoffice);
-router.delete("/api/v1/petition/:id", postController.deletepetition);
+router.delete("/api/v1/parties/:id", partyController.deleteparties);
+router.delete("/api/v1/user/:id", usersController.deleteuser);
+router.delete("/api/v1/candidates/:id", candidatesController.deletecandidate);
+router.delete("/api/v1/office/:id",officesController.deleteoffice);
+router.delete("/api/v1/petition/:id", petitionsController.deletepetition);
 &nbsp;
 export default router;</pre></td></tr>
 </table></pre>
@@ -202,7 +202,7 @@ export default router;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Feb 08 2019 07:26:02 GMT+0200 (South Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Feb 15 2019 03:00:32 GMT+0200 (South Africa Standard Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>
